@@ -4,11 +4,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { FusionAuthProvider } from 'fusionauth-react-sdk';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <FusionAuthProvider
+    baseUrl="http://localhost:9011/"
+    clientID="e9bd45db-ccd9-4668-b1fe-c2629d5327c2"
+    serverUrl="http://localhost:3001"
+    redirectUri="http://localhost:3000/">
+      <App />
+    </FusionAuthProvider>
   </React.StrictMode>
 );
 

@@ -1,4 +1,5 @@
 import { AppBar, Box, Button, Container, Menu, Toolbar, Tooltip, Typography } from '@mui/material';
+import { FusionAuthLoginButton } from 'fusionauth-react-sdk';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './landing/Landing';
 import Product from './products/Product';
@@ -44,24 +45,7 @@ function App() {
 
               {/*User account section*/}
               <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Settings">
-                <Button sx={{ my: 2, color: 'white', display: 'block' }}>Settings</Button>
-                </Tooltip>
-                <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                >
-                  <Button sx={{ my: 2, color: 'white', display: 'block' }}>Log In</Button>
-                </Menu>
+                <FusionAuthLoginButton />
               </Box>
           </Toolbar>
         </Container>
